@@ -4,6 +4,8 @@ use App\Http\Controllers\admin\HomeController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\RouteCompiler;
 
+use App\Http\Controllers\admin\OrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
+
     Route::get('/', [App\Http\Controllers\admin\HomeController::class, 'index']);
+
+    Route::resource('orders', OrderController::class);
 });
 
