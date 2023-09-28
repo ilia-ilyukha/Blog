@@ -40,11 +40,13 @@ generateCalendar = (month, year) => {
         let day = document.createElement('div')
         if (i >= firstDay.getDay()) {
             day.classList.add('calendarDayHover')
-            day.innerHTML = i - firstDay.getDay() + 1
+            day.innerHTML = `<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">` +  (i - firstDay.getDay() + 1);
+            // day.innerHTML += i - firstDay.getDay() + 1;
             day.innerHTML += `<span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>`
+            <span></span>
+            <span></span>
+            <span></span>`
+            day.innerHTML += `</button>`;
             if (i - firstDay.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
                 day.classList.add('currDate')
             }
