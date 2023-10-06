@@ -6,8 +6,7 @@ use Symfony\Component\Routing\RouteCompiler;
 
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\PostController;
-
-
+use App\Http\Controllers\admin\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +33,6 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
 
     Route::resource('orders', OrderController::class);
     Route::resource('posts', PostController::class);
+    Route::resource('questions', QuestionController::class);
 });
 

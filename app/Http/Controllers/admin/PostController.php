@@ -55,7 +55,8 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts');
+        
+        return redirect()->route('posts.index');
         // return redirect()->back()->withSuccess('Статья была успешно добавлена!');
     }
 
