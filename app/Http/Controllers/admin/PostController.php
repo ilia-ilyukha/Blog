@@ -47,7 +47,7 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->published = $request->published;
-        $post->annotation = $this->cutString(htmlentities($request->body, ENT_NOQUOTES, 'UTF-8'), 50);
+        $post->annotation = isset($request->annotation) ? $request->annotation : $this->cutString($request->body, 50);
         $post->user_id = $request->user_id;
         $post->created_at = date('Y-m-d');
         $post->body = htmlentities($request->body, ENT_NOQUOTES, 'UTF-8');
@@ -62,6 +62,8 @@ class PostController extends Controller
 
     public function cutString($string, $maxlen)
     {
+        htmlentities($string, ENT_NOQUOTES, 'UTF-8');
+
         $string = str_replace("\n", "", $string);
         $len = (mb_strlen($string) > $maxlen) ? mb_strripos(mb_substr($string, 0, $maxlen), ' ') : $maxlen;
         $cutStr = mb_substr($string, 0, $len);

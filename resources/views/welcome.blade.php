@@ -402,6 +402,8 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+
+    <link rel="stylesheet" href="/src/assets/css/main.css" />
 </head>
 
 <body class="antialiased">
@@ -410,6 +412,7 @@
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
             <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+            <a href="{{ url('/admin_panel') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Admin</a>
             @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
@@ -424,6 +427,14 @@
             <hello-vue />
         </div>
     </div>
+
+    <script type="module" src="/src/main.ts"></script>
+
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/skel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/util.js') }}"></script>
+    <!--[if lte IE 8]><script src="src/assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>

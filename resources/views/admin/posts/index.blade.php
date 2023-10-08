@@ -32,6 +32,11 @@
                     </div>
                 </div>
                 <div class="card-body p-0">
+                    <div class="flex">
+                        <a href="{{ route('posts.create') }}">
+                            <button type="button" class="btn btn-block btn-outline-primary">Create</button>
+                        </a>
+                    </div>
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
@@ -121,3 +126,18 @@
 </section>
 
 @endsection
+
+
+@push('links')
+<style>
+    .flex{
+        display: flex;
+        justify-content: end;
+        margin: 13px 25px;
+    }
+    
+    .btn-block {
+        width: auto !important;       
+    }
+</style>
+@endpush
