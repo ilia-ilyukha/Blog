@@ -1,10 +1,14 @@
 require('./bootstrap');
 
 import { createApp } from 'vue';
-import HelloVue from '../components/HelloVue.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import App from '../components/App.vue';
+import router from '../router/index';
 
 createApp({
     components: {
-        HelloVue,
+        App,
     }
-}).mount('#app');
+})
+.use(router)
+.mount('#app');

@@ -19,9 +19,9 @@ use App\Http\Controllers\admin\QuestionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -35,4 +35,8 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('posts', PostController::class);
     Route::resource('questions', QuestionController::class);
 });
+
+//Router for vue.js
+Route::view('{any}', 'welcome')
+    ->where('any', '.*');
 

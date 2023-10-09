@@ -403,7 +403,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="/src/assets/css/main.css" />
+    <!-- <link rel="stylesheet" href="/src/assets/css/main.css" /> -->
 </head>
 
 <body class="antialiased">
@@ -424,17 +424,17 @@
         @endif
 
         <div id="app">
-            <hello-vue />
+            <App />
         </div>
     </div>
 
-    <script type="module" src="/src/main.ts"></script>
+    <!-- <script type="module" src="/src/main.ts"></script> -->
 
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <!-- <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/skel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/util.js') }}"></script>
+    <script src="{{ asset('assets/js/util.js') }}"></script> -->
     <!--[if lte IE 8]><script src="src/assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- <script src="{{ asset('assets/js/main.js') }}"></script> -->
 </body>
 
 </html>
