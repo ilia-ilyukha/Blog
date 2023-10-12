@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive, computed } from 'vue';
 import { useRoute } from 'vue-router'
+import GoBack from '../elements/GoBack.vue';
 const route = useRoute();
 
 const post = ref(null);
@@ -16,7 +17,8 @@ fetch("http://127.0.0.1:8000/api/v1/posts/" + route.params.id)
 </script>
 
 <template>
-    <div>
+    <div class="container" v-if="post !== null">
+        <GoBack />
         <header>
             <div class="title">
                 <h2>
@@ -24,7 +26,10 @@ fetch("http://127.0.0.1:8000/api/v1/posts/" + route.params.id)
                 </h2>
             </div>
         </header>
-        {{ post.body }}
+        <div>
+            <div v-html="post.body"></div>
+        </div>
+        <!-- {{ post.body }} -->
         <footer>
 
         </footer>

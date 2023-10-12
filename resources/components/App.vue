@@ -12,7 +12,8 @@ import Posts from "../components/blog/Posts.vue";
 </script>
 
 <template>
-  <h1>Hello Vue123!!!</h1>
+    <h1>Hello Vue!!!</h1>
 
-  <router-view></router-view>
+    <router-view></router-view>
+  
 </template>

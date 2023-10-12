@@ -20,7 +20,7 @@ class PostResource extends JsonResource
             'published' => $this->published,
             'title' => $this->title,
             'annotation' => $this->annotation,
-            'body' => $this->body,
+            'body' => html_entity_decode($this->body),
             'image' => $this->image,
             'userId' => $this->user_id,
             'created_at' => $this->created_at,
