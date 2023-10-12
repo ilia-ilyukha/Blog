@@ -7,6 +7,7 @@ use App\Http\Resources\Api\v1\PostCollection;
 use App\Http\Resources\Api\v1\PostResource;
 use Illuminate\Http\Request;
 use App\Models\admin\Post;
+use App\Services\V1\PostQuery;
 
 class PostController extends Controller
 {
@@ -15,9 +16,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new PostCollection(Post::paginate(10));
+        $filter = new PostQuery();
+        $queryItems = $filter->transform($request);
+
+        if(count($queryItems) == 0){
+            return new PostCollection(Post::paginate(10));
+        }else{
+            return new PostCollection(Post::where($queryItems)->paginate());
+        }
     }
 
     /**

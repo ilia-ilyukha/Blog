@@ -26,6 +26,7 @@ class PostResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'published_at' => $this->published_at,
+            'custom_code' => $this->id . '_' . $this->title . '_' . $this->user_id,
         ];
 
         // id	2
