@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Filters\V1\PostFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\v1\PostCollection;
 use App\Http\Resources\Api\v1\PostResource;
 use Illuminate\Http\Request;
 use App\Models\admin\Post;
-use App\Services\V1\PostQuery;
 
 class PostController extends Controller
 {
@@ -18,13 +18,22 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $filter = new PostQuery();
-        $queryItems = $filter->transform($request);
+        $filter = new PostFilter();
+        $filterItems = $filter->transform($request);
 
-        if(count($queryItems) == 0){
+        // $includeUsers = $request->query('include');
+        // $posts = Post::where($filterItems);
+        
+        // if($includeUsers){
+        //     $users
+        // }
+        // $posts->paginate();
+
+        if(count($filterItems) == 0){
             return new PostCollection(Post::paginate(10));
         }else{
-            return new PostCollection(Post::where($queryItems)->paginate());
+            $posts = Post::where($filterItems)->paginate();
+            return new PostCollection($posts->appends($request->query()));
         }
     }
 
