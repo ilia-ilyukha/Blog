@@ -1,5 +1,5 @@
 <template>
     <div class="go-back">
-        <button  @click="$router.back()">Go back</button>  
+        <a  @click="$router.back()"><i class="arrow-prev fas fa-long-arrow-alt-left"></i> Go back</a>  
     </div>
 </template>

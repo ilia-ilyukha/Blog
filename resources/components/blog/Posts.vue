@@ -12,8 +12,8 @@ const URL = "http://127.0.0.1:8000";
 fetch(URL + "/api/v1/posts")
     // .then(responce => console.log(responce))
     .then(responce => responce.json())
-    .then(data => { 
-        posts.value = data.data; 
+    .then(data => {
+        posts.value = data.data;
         console.log(posts);
     });
 
@@ -22,6 +22,14 @@ fetch(URL + "/api/v1/posts")
 <template>
     <div class="container">
         <post-card v-for="post in posts" :key="post.id" :post="post">
-        </post-card>        
+        </post-card>
+
+
+        <nav class="blog-nav nav nav-justified my-5">
+            <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i
+                    class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+            <a class="nav-link-next nav-item nav-link rounded" href="blog-list.html">Next<i
+                    class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+        </nav>
     </div>
 </template>
