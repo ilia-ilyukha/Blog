@@ -1,2 +1,15 @@
 https://laracasts.com/discuss/channels/laravel/best-way-to-store-time-data
 https://timepicker.co/
+
+https://medium.com/@bar5um/how-to-make-new-model-controller-migration-in-laravel-eba1089cbe9a
+
+https://www.codecheef.org/article/laravel-9-custom-pagination-example-tutorial
+
+Patterns:
+https://refactoring.guru/ru/design-patterns/abstract-factory/php/example#example-1
+
+Laravel clear cache:
+https://tinkerwell.app/blog/laravel-caches-and-all-ways-to-clear-them
+
+Vue-router:
+https://vue-router-ru.netlify.app/guide/essentials/navigation.html
