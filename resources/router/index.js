@@ -4,6 +4,7 @@ import Posts from '../components/blog/Posts';
 import PostPage from '../components/blog/PostPage';
 // import Posts from './blog/Posts.vue';
 // import Posts from "../components/blog/Posts.vue";
+import QuestionsPage from '../components/questions/QuestionsPage';
 
 const routes = [
     {
@@ -15,6 +16,11 @@ const routes = [
       path: '/post/:id',
       name: 'post', 
       component: PostPage 
+    },
+    { 
+      path: '/questions',
+      name: 'questions', 
+      component: QuestionsPage 
     },
     // {
     //   path: '/test',

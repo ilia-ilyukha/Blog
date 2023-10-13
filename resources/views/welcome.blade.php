@@ -35,7 +35,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div id="navigation" class="collapse navbar-collapse flex-column">
+            <div id="navigation" class="navbar-collapse flex-column">
                 <div class="profile-section pt-3 pt-lg-0">
                     <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image">
 

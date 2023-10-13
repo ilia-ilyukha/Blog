@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+blockquote *{
+    background-color: rgb(56 71 106) !important;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+blockquote pre, p, span {
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#question_accordion button{
+    padding: 10px !important;
+}
