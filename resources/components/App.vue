@@ -9,6 +9,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import Test from '../views/Test.vue';
 // import PostView from '../views/blog/PostView.vue';
 import Posts from "../components/blog/Posts.vue";
+
 </script>
 
 <template>
