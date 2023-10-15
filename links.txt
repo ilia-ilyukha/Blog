@@ -14,5 +14,8 @@ https://tinkerwell.app/blog/laravel-caches-and-all-ways-to-clear-them
 Vue-router:
 https://vue-router-ru.netlify.app/guide/essentials/navigation.html
 
+flowbite library:
+https://flowbite.com/docs/getting-started/introduction/
+
 docker-compose lamp
 https://medium.com/@harmancioglue/lamp-phpmyadmin-and-xdebug-with-docker-c07c2615a721
