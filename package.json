@@ -25,6 +25,8 @@
         "vue-loader": "^16.2.0"
     },
     "dependencies": {
+        "flowbite": "^1.8.1",
+        "flowbite-vue": "^0.0.17",
         "vue-router": "^4.2.5"
     }
 }

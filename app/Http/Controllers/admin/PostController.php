@@ -55,7 +55,7 @@ class PostController extends Controller
 
         $post->save();
 
-        
+
         return redirect()->route('posts.index');
         // return redirect()->back()->withSuccess('Статья была успешно добавлена!');
     }
@@ -99,7 +99,7 @@ class PostController extends Controller
             'authors'  => $authors
         ]);
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -114,8 +114,20 @@ class PostController extends Controller
         $post->annotation = $request->annotation;
         $post->user_id = $request->author;
         $post->created_at = date('Y-m-d');
-        $post->body = $request->body;
-        $post->image = $request->image;
+        $post->body = htmlentities($request->body, ENT_NOQUOTES, 'UTF-8');
+
+        if ($request->hasFile('image_file')) {
+
+            $image = $request->file('image_file');
+            $filename = $image->getClientOriginalName();           
+            $path = $image->storeAs('/images/blog', $filename, 'public');
+            // $path1 = $request->file('image_file')->store('', 'public');
+            $post->image = $path;
+        } 
+        // else {
+        //     $post->image = 'no-image.png';
+        // }
+        // $post->image = $request->image;
         $post->save();
 
         return redirect()->back()->withSuccess('Article has been update!');
@@ -131,5 +143,27 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect()->back()->withSuccess('Article has been delete!');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function imageUploadPost(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+
+        $request->image->move(public_path('images'), $imageName);
+
+        /* Store $imageName name in DATABASE from HERE */
+
+        return back()
+            ->with('success', 'You have successfully upload image.')
+            ->with('image', $imageName);
     }
 }

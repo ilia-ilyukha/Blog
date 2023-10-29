@@ -6,10 +6,10 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="item mb-5">
+    <div class="item mb-5 p-3">
         <div class="media">
-            <!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-1.jpg"
-                alt="image"> -->
+            <img class="mr-3 img-fluid post-thumb d-none d-md-flex" :src="post.image" alt="image">
+            <!-- <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="/images/blog/blog-post-thumb-1.jpg" alt="image"> -->
             <div class="media-body">
                 <h3 class="title mb-1">
                     <router-link :to="{ path: `/post/${post.id}` }" >

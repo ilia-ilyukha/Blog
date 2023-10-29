@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Api\v1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class PostResource extends JsonResource
 {
@@ -21,7 +22,7 @@ class PostResource extends JsonResource
             'title' => $this->title,
             'annotation' => $this->annotation,
             'body' => html_entity_decode($this->body),
-            'image' => $this->image,
+            'image' => $this->getPostPathAttribute($this->image),
             'userId' => $this->user_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
@@ -39,5 +40,17 @@ class PostResource extends JsonResource
         // created_at	"2023-10-07T00:00:00.000000Z"
         // updated_at	"2023-10-07T20:20:35.000000Z"
         // published_at	null
+    }
+
+    public function getPostPathAttribute($post_image)
+    {
+        $url = asset(Storage::url($post_image ?: 'images/about-me.jpg'));
+
+        //Remove domain from $url, because gives http://127.0.0.1/ not http://127.0.0.1:8000/ 
+        //without port :8000
+        $path = parse_url($url, PHP_URL_PATH); 
+
+        return $path;
+        // return asset(Storage::url('images/about-me.jpg'));
     }
 }

@@ -11,7 +11,7 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-12">
-                <form action="{{ route('posts.store') }}" method="POST">
+                <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card card-primary">
                         <div class="card-header">
@@ -47,8 +47,14 @@
                             <div class="form-group">
                                 <label for="image">Image</label>
                                 <input type="text" id="image" class="form-control" name="image">
+                                
                             </div>
-
+                            <div class="input-group">
+                                <div class="form-group">
+                                    <label for="image_file">Загрузить картинку</label>
+                                    <input type="file" name="image_file" id="image_file">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="user_id">Author</label>
                                 <select class="custom-select rounded-0" id="exampleSelectRounded0" name="user_id">
