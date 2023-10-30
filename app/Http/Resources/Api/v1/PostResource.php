@@ -44,11 +44,15 @@ class PostResource extends JsonResource
 
     public function getPostPathAttribute($post_image)
     {
-        $url = asset(Storage::url($post_image ?: 'images/about-me.jpg'));
+        if(file_exists(storage_path("app\public\\" . $post_image))){
+            $url = asset(Storage::url($post_image ?: 'images/about-me.jpg'));
 
-        //Remove domain from $url, because gives http://127.0.0.1/ not http://127.0.0.1:8000/ 
-        //without port :8000
-        $path = parse_url($url, PHP_URL_PATH); 
+            //Remove domain from $url, because gives http://127.0.0.1/ not http://127.0.0.1:8000/ 
+            //without port :8000
+            $path = parse_url($url, PHP_URL_PATH);
+        }else{
+            $path = '/storage/images/about-me.jpg';
+        }
 
         return $path;
         // return asset(Storage::url('images/about-me.jpg'));

@@ -1,21 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Posts from '../components/blog/Posts';
-import PostPage from '../components/blog/PostPage';
+import Post from '../components/blog/Post';
+
 // import Posts from './blog/Posts.vue';
 // import Posts from "../components/blog/Posts.vue";
-import QuestionsPage from '../components/questions/QuestionsPage';
+import QuestionsPage from '../components/pages/QuestionsPage';
+import HomePage from '../components/pages/HomePage';
+
 
 const routes = [
     {
       path: '/',
       name: 'home',
-      component: Posts
+      component: HomePage
     },
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: Posts
+    // },
     { 
       path: '/post/:id',
       name: 'post', 
-      component: PostPage 
+      component: Post
     },
     { 
       path: '/questions',

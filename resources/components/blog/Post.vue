@@ -23,9 +23,9 @@ fetch("http://127.0.0.1:8000/api/v1/posts/" + route.params.id)
         <GoBack />
         <header>
             <div class="title">
-                <h2>
+                <h1>
                     {{ post.title }}
-                </h2>
+                </h1>
             </div>
         </header>
         <div>
