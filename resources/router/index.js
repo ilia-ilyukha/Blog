@@ -7,7 +7,8 @@ import Post from '../components/blog/Post';
 // import Posts from "../components/blog/Posts.vue";
 import QuestionsPage from '../components/pages/QuestionsPage';
 import HomePage from '../components/pages/HomePage';
-
+import CategoriesPage from '../components/Pages/CategoriesPage';
+import Category from '../components/categories/Category';
 
 const routes = [
     {
@@ -29,6 +30,16 @@ const routes = [
       path: '/questions',
       name: 'questions', 
       component: QuestionsPage 
+    },
+    { 
+      path: '/categories',
+      name: 'categories', 
+      component: CategoriesPage 
+    },
+    { 
+      path: '/categories/:id',
+      name: 'category', 
+      component: Category
     },
     // {
     //   path: '/test',
