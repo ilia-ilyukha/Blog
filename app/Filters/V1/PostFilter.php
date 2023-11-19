@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class PostFilter extends ApiFilter {
     protected $safeParms = [
-        'title' => ['eq']
+        'title' => ['eq'],
+        'category_id' => ['eq'],
     ];
 
     protected $columnMap = [
