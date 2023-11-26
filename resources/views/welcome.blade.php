@@ -58,6 +58,9 @@
                         <a class="nav-link" href="/questions"><i class="fas fa-bookmark fa-fw mr-2"></i>Questions</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/categories"><i class="fas fa-bookmark fa-fw mr-2"></i>Categories</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
                     </li>
                 </ul>
