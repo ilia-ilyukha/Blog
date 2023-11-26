@@ -1,35 +1,28 @@
+<!-- http://127.0.0.1:8000/api/v1/questions -->
 <script setup>
 
 import { ref, reactive, computed } from 'vue';
-import { useRoute } from 'vue-router'
-import PostCard from './PostCard.vue'
+import CategoryCard from './CategoryCard.vue'; 
 
 const data = ref(null)
-const posts = ref(null);
-const props = defineProps(['category_id'])
-let params = '';
+const categories = ref(null);
 
-if(props.category_id){
-    params = '?category_id[eq]=' + props.category_id;
-    console.log(props.category_id);
-}
-const URL = "http://127.0.0.1:8000";
-// const URL = "http://127.0.0.1:8000/api/v1/posts";
+const URL = "http://127.0.0.1:8000/api/v1";
 
-
-fetch(URL + "/api/v1/posts/" + params)
+fetch(URL + "/category")
+    // .then(responce => console.log(responce))
     .then(responce => responce.json())
     .then(data => {
-        posts.value = data.data;
-        console.log(posts);
+        categories.value = data.data;
+        console.log(categories);
     });
- 
+
 </script>
 
 <template>
     <div class="container">
-        <post-card v-for="post in posts" :key="post.id" :post="post">
-        </post-card>
+        <CategoryCard v-for="category in categories" :key="categories.id" :category="category">
+        </CategoryCard>
 
 
         <nav class="blog-nav nav nav-justified my-5">

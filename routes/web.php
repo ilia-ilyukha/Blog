@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\HomeController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\RouteCompiler;
@@ -34,6 +35,7 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('orders', OrderController::class);
     Route::resource('posts', PostController::class);
     Route::resource('questions', QuestionController::class);
+    Route::resource('category', CategoryController::class);
 });
 
 //Router for vue.js

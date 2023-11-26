@@ -2,18 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-blockquote *{
+html, body{
+    height: 100%;
+}
+
+blockquote * {
     background-color: rgb(56 71 106) !important;
     color: #ffffff;
     font-family: monospace;
 }
 
-blockquote pre, p, span {
+blockquote pre,
+p,
+span {
     padding-left: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-#question_accordion button{
+#question_accordion button {
     padding: 10px !important;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    height: 100%;
+    flex: 1 1 auto;
 }

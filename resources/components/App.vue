@@ -8,10 +8,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 // import Test from '../views/Test.vue';
 // import PostView from '../views/blog/PostView.vue';
-import Posts from "../components/blog/Posts.vue";
+// import Posts from "../components/blog/Posts.vue";
 
 </script>
 
 <template>
-    <router-view></router-view>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
+

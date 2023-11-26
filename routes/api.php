@@ -3,6 +3,7 @@
 // use App\Http\Controllers\Api\v1\PostController;
 // use App\Models\admin\Post;
 
+// use App\Http\Controllers\api\V1\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,5 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\v1'], f
     // /api/v1/posts
     Route::apiResource('posts', PostController::class);
     Route::apiResource('questions', QuestionController::class);
+    Route::apiResource('category', CategoryController::class);
 });

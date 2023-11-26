@@ -54,6 +54,10 @@ git stash
 чтобы вы могли применить их позже. 
 Откладывание изменений полезно, если вам необходимо переключить контекст и вы пока не готовы к созданию коммита.
 
+Авторизация laravel + vue
+http://www.voerro.com/ru/tutorials/r/razrabotka-odnostranichnyh-prilozhenii-spa-na-laravel-5-i-vuejs-2/1
 
 docker-compose exec app php artisan ti 
 
+"Старые пластинки"
+https://www.songsterr.com/a/wsa/tab-s496718t0
