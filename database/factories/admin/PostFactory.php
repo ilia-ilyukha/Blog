@@ -16,7 +16,7 @@ class PostFactory extends Factory
         return [
             'user_id' => '2',
             'title' => 	$this->faker->sentence(5),
-            'annotation' => $this->faker->sentence(15),
+            'annotation' => $this->faker->sentence(5),
             'body' => $this->faker->sentence(200),
             'created_at' => $this->faker->dateTimeBetween('-30 days', '-10 days'),
             'image' => "no_image.jpg",
