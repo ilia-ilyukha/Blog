@@ -10,10 +10,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import PostView from '../views/blog/PostView.vue';
 // import Posts from "../components/blog/Posts.vue";
 
+import Header from './sections/Header.vue';
+
 </script>
 
 <template>
-    <div>
+    <Header />
+    <div class="wrapper">
         <router-view></router-view>
     </div>
 </template>
