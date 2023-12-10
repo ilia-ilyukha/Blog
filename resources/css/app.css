@@ -67,3 +67,14 @@ pre code {
     word-break: normal;
     font-family: monospace;
 }
+
+/*Header*/
+.menu-header{
+    margin: 20px 0px;
+}
+.menu-header a {
+    padding: 30px;
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Nunito';
+}

@@ -19,7 +19,7 @@ const props = defineProps({
                     
                 </h3>
                 <div class="meta mb-1">
-                    <span class="date">Published 2 days ago</span>
+                    <span class="date">Published {{ post.created_at }}</span>
                     <span class="time">5 min read</span>
                     <span class="comment">
                         <a href="#">8 comments</a>

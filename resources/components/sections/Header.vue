@@ -5,9 +5,10 @@ import { useRoute } from 'vue-router'
 </script>
 
 <template>
-    <header>
+    <div class="menu-header">
         <router-link to="/">Go to Home</router-link>
         <router-link to="/categories">Categories</router-link>
         <router-link to="/questions">Questions</router-link>
-    </header>
+        <router-link to="/carousel">Carousel</router-link>
+    </div>
 </template>

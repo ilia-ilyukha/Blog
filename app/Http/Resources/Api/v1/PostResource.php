@@ -4,6 +4,7 @@ namespace App\Http\Resources\Api\v1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Carbon;
 
 class PostResource extends JsonResource
 {
@@ -15,6 +16,7 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
+        $created_at = \Carbon\Carbon::parse($this->created_at)->format('d-m-Y');
         // return parent::toArray($request);
         return [
             'id' => $this->id,
@@ -25,7 +27,7 @@ class PostResource extends JsonResource
             'body' => html_entity_decode($this->body),
             'image' => $this->getPostPathAttribute($this->image),
             'userId' => $this->user_id,
-            'created_at' => $this->created_at,
+            'created_at' => $created_at,
             'updated_at' => $this->updated_at,
             'published_at' => $this->published_at,
             'custom_code' => $this->id . '_' . $this->title . '_' . $this->user_id,
