@@ -8,6 +8,7 @@ use Symfony\Component\Routing\RouteCompiler;
 use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\admin\PostController;
 use App\Http\Controllers\admin\QuestionController;
+use App\Http\Controllers\admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,8 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group(function () {
     Route::resource('posts', PostController::class);
     Route::resource('questions', QuestionController::class);
     Route::resource('category', CategoryController::class);
+    Route::resource('users', UserController::class);
+    
 });
 
 //Router for vue.js
