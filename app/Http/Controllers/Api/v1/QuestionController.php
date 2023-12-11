@@ -20,7 +20,7 @@ class QuestionController extends Controller
      */
     public function index(Request $request)
     {        
-        return new QuestionCollection(Question::paginate(10));
+        return new QuestionCollection(Question::inRandomOrder()->paginate(10));
     }
 
     /**

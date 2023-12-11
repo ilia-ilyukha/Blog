@@ -1,0 +1,16 @@
+<?php
+	use Illuminate\Support\Facades\DB;
+	
+	class DatabaseSeeder extends Seeder
+	{
+		public function run()
+		{
+            DB::table('questions')->insert([
+                'title' => $this->faker->sentence,
+                'question' => $this->faker->sentence,
+                'answer' => $$this->faker->sentence,
+                'tag' => 'php',
+            ]);			
+		}
+	}
+?>

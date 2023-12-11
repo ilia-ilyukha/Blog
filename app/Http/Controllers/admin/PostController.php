@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\admin\Post;
 use App\Models\User;
 
@@ -16,9 +17,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['posts'] = Post::orderBy('id', 'desc')->paginate(10);
+        $q = $request->input('query');
+
+        $posts = Post::orderBy('id', 'desc')
+        ->with('user:id,name')
+        ->search($q)
+        ->paginate(10);
+// dd($posts);
+        $data['posts'] = $posts;
         return view('admin.posts.index', $data);
     }
 

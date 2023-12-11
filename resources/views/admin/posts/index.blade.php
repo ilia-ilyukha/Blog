@@ -31,6 +31,26 @@
                         </button>
                     </div>
                 </div>
+                <div class="card-header">
+                            <form action="{{ route('posts.index')  }}">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Search posts</label>
+                                    <input
+                                        placeholder="ex: My favorite post"
+                                        value="{{ request()->get('query', '')  }}"
+                                        type="text"
+                                        name="query"
+                                        class="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">
+                                        Search post by title, annotation, text.
+                                        {{--                                           <b>total found</b>: {{ $user_count }}--}}
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-outline-primary">Find</button>
+                                </div>
+                            </form>
+                        </div>
                 <div class="card-body p-0">
                     <div class="flex">
                         <a href="{{ route('posts.create') }}">
@@ -75,7 +95,7 @@
                                     </small>
                                 </td>
                                 <td>
-                                    <!-- {{ $post->nickname }} -->
+                                    {{ $post->user->name }}
                                 </td>
                                 <td class="project_progress">
                                     {{ $post->annotation }}
