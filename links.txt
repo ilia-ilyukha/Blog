@@ -63,9 +63,18 @@ http://www.voerro.com/ru/tutorials/r/razrabotka-odnostranichnyh-prilozhenii-spa-
 
 ______________________________________________________________________________________________________
 docker-compose exec app php artisan ti 
+docker-compose exec app php artisan migrate
 
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+$role = Role::create(['name' => 'writer']);
 ______________________________________________________________________________________________________
 User::create(["name"=> "admin","email"=>"admin@gmail.com","password"=>bcrypt("123456")]);
 
 $user = App\User::with('roles')->where('email','admin@gmail.com')->first();
 $user->assignRole('admin');
+
+______________________________________________________________________________________________________
+docker for opencart 
+https://opencartforum.com/blogs/entry/383-zapusk-i-otladka-opencart-s-pomoschyu-docker-i-xdebug/
