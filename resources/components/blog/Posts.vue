@@ -4,24 +4,30 @@ import { ref, reactive, computed } from 'vue';
 import { useRoute } from 'vue-router'
 import PostCard from './PostCard.vue'
 
+// import usePosts '../../composables/post.js';
+
 const data = ref(null)
 const posts = ref(null);
-const props = defineProps(['category_id'])
+const pagination_links = ref(null);
+const props = defineProps(['category_id']);
 let params = '';
+let url_link = '';
 
 if(props.category_id){
     params = '?category_id[eq]=' + props.category_id;
     console.log(props.category_id);
 }
 const URL = "http://127.0.0.1:8000";
+url_link = URL + "/api/v1/posts/" + params;
 // const URL = "http://127.0.0.1:8000/api/v1/posts";
 
 
-fetch(URL + "/api/v1/posts/" + params)
+fetch(url_link)
     .then(responce => responce.json())
     .then(data => {
         posts.value = data.data;
-        console.log(posts);
+        pagination_links.value = data.links;
+        console.log(pagination_links);
     });
  
 </script>
