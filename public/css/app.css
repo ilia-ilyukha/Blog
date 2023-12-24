@@ -11972,6 +11972,94 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html, body{
+    height: 100%;
+}
+
+blockquote * {
+    background-color: rgb(56 71 106) !important;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+blockquote pre,
+p,
+span {
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#question_accordion button {
+    padding: 10px !important;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: #e5e2e2;
+}
 .container{
-    background-color: aliceblue;
+    background-color: #fffefe;
+}
+pre {
+    background: #f7f7f7;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: .875rem;
+    line-height: 1.6;
+    margin: 0;
+    overflow: auto;
+    padding: 17px 20px;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+    white-space: pre;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+}
+pre code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    font-family: monospace;
+}
+
+/*Header*/
+.menu-header{
+    margin: 20px 0px;
+}
+.menu-header a:hover {
+    color: #53dc10;
+}
+.menu-header a {
+    padding: 30px;
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Nunito';
+    color: #161615;
+}
+
+.login-menu{
+    right: 0;
+    position: absolute;
+    margin: 20px;
+}
+
+.social-list a{
+    color:#ffffff
 }
