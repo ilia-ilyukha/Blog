@@ -5,8 +5,9 @@ import Post from '../components/blog/Post';
 
 // import Posts from './blog/Posts.vue';
 // import Posts from "../components/blog/Posts.vue";
-import QuestionsPage from '../components/pages/QuestionsPage';
-import HomePage from '../components/pages/HomePage';
+// import QuestionsPage from '../components/pages/QuestionsPage';
+import QuestionsPage from "../components/Pages/QuestionsPage";
+import HomePage from '../components/Pages/HomePage';
 import CategoriesPage from '../components/Pages/CategoriesPage';
 import Category from '../components/categories/Category';
 
