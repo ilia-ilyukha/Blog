@@ -22,10 +22,10 @@ class PostController extends Controller
         $q = $request->input('query');
 
         $posts = Post::orderBy('id', 'desc')
-        ->with('user:id,name')
-        ->search($q)
-        ->paginate(10);
-// dd($posts);
+            ->with('user:id,name')
+            ->search($q)
+            ->paginate(10);
+        // dd($posts);
         $data['posts'] = $posts;
         return view('admin.posts.index', $data);
     }
@@ -127,11 +127,11 @@ class PostController extends Controller
         if ($request->hasFile('image_file')) {
 
             $image = $request->file('image_file');
-            $filename = $image->getClientOriginalName();           
+            $filename = $image->getClientOriginalName();
             $path = $image->storeAs('/images/blog', $filename, 'public');
             // $path1 = $request->file('image_file')->store('', 'public');
             $post->image = $path;
-        } 
+        }
         // else {
         //     $post->image = 'no-image.png';
         // }

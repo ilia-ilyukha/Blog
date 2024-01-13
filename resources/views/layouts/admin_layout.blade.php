@@ -247,6 +247,12 @@
                 <p>Users</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{ route('tasks.index') }}" class="nav-link">
+                <i class="nav-icon far fa-circle text-info"></i>
+                <p>Tasks</p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
