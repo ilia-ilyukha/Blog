@@ -20,7 +20,7 @@ fetch(URL + "/category")
 </script>
 
 <template>
-    <div class="container">
+    <div class="">
         <CategoryCard v-for="category in categories" :key="categories.id" :category="category">
         </CategoryCard>
 

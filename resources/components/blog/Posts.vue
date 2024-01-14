@@ -33,7 +33,7 @@ fetch(url_link)
 </script>
 
 <template>
-    <div class="container">
+    <div class="">
         <post-card v-for="post in posts" :key="post.id" :post="post">
         </post-card>
 

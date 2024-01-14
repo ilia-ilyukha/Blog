@@ -18,7 +18,7 @@ const category_id = route.params.id;
     <section class="blog-list px-3 py-5 p-md-5">
         
         <GoBack />
-        <div class="container">
+        <div class="">
             <Posts :category_id="category_id" />
         </div>
     </section>

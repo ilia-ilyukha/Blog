@@ -78,3 +78,9 @@ $user->assignRole('admin');
 ______________________________________________________________________________________________________
 docker for opencart 
 https://opencartforum.com/blogs/entry/383-zapusk-i-otladka-opencart-s-pomoschyu-docker-i-xdebug/
+
+______________________________________________________________________________________________________
+Dump for database
+https://github.com/spatie/db-dumper
+
+http://numbersapi.com/#12/19/date

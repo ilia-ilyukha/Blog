@@ -1,5 +1,5 @@
 <template>
-    <div class="container text-center">
+    <div class="text-center">
         <h2 class="heading">DevBlog - A Blog Template Made For Developers</h2>
         <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
         <form class="signup-form form-inline justify-content-center pt-3">
