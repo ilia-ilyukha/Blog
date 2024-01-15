@@ -39,18 +39,18 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-         // dd($request);
-         $question = new Question();
+        // dd($request);
+        $question = new Question();
 
-         $question->title = $request->title;
-         $question->status = $request->status;         
-         $question->answer = $request->answer;
-         $question->question = htmlentities($request->question, ENT_NOQUOTES, 'UTF-8');
-         $question->tag = $request->tag;
- 
-         $question->save();
- 
-         return redirect()->route('questions.index');
+        $question->title = $request->title;
+        $question->status = $request->status;
+        $question->answer = $request->answer;
+        $question->question = htmlentities($request->question, ENT_NOQUOTES, 'UTF-8');
+        $question->tag = $request->tag;
+
+        $question->save();
+
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -70,9 +70,15 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
-        //
+        $question['answer1'] = $question['answer'];
+        $question['answer2'] = $question['answer'];
+        $question['answer3'] = $question['answer'];
+        $question['answer4'] = $question['answer'];
+        return view('admin.questions.edit', [
+            'question' => $question
+        ]);
     }
 
     /**
@@ -82,9 +88,20 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Question $question)
     {
-        //
+        
+        $question->title = $request->title;
+        $variants = json_encode($request->answers);
+        $question->variants = $variants;
+        
+        $correct_ids_array = ['1'];
+        $correct_ids = json_encode($correct_ids_array);
+        $question->correct_ids = $correct_ids;
+
+        $question->save();
+
+        return redirect()->back()->withSuccess('Question has been update!');
     }
 
     /**
