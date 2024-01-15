@@ -9,6 +9,6 @@ import { useRoute } from 'vue-router'
         <router-link to="/">Go to Home</router-link>
         <router-link to="/categories">Categories</router-link>
         <router-link to="/questions">Questions</router-link>
-        <router-link to="/carousel">Carousel</router-link>
+        <router-link to="#">Carousel</router-link>
     </div>
 </template>

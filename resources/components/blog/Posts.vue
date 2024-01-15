@@ -27,7 +27,7 @@ fetch(url_link)
     .then(data => {
         posts.value = data.data;
         pagination_links.value = data.links;
-        console.log(pagination_links);
+        // console.log(pagination_links);
     });
  
 </script>

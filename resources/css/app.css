@@ -89,6 +89,7 @@ pre code {
     color:#ffffff
 }
 
-.container{
+body{
     min-height: 100vh;
+    background: #e5e2e2;
 }

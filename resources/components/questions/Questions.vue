@@ -1,12 +1,11 @@
 <!-- http://127.0.0.1:8000/api/v1/questions -->
 <script setup>
 
-import { ref, reactive, computed, onMounted  } from 'vue';
+import { ref, reactive, computed, onMounted } from 'vue';
 import Question from './Question.vue';
 import Multistep from './Multistep.vue';
 
 const questions = ref(null);
-
 const current = ref(0);
 const obj = reactive({ current })
 const currentQuestionIndex = ref(1);
@@ -21,14 +20,14 @@ onMounted(() => {
         .then(responce => responce.json())
         .then(data => {
             questions.value = data.data;
-            // console.log(questions.value);
+            console.log(questions.value.length);
         });
 })
 
 function nextQuestion() { current.value++; }
 function previousQuestion() { current.value--; }
-let currentQuestion = computed(() => { 
-    return questions[current.value]; 
+let currentQuestion = computed(() => {
+    return questions[current.value];
 });
 
 </script>
@@ -42,31 +41,31 @@ let currentQuestion = computed(() => {
             >
         </Question> -->
 
-        <Question v-if="questions" :question="questions[current]" ></Question>
-       
+        <Question v-if="questions" :question="questions[current]" :current="current"></Question>
+
         <!-- <div v-for="question in questions" :key="questions.id">
            
         </div> -->
-        
-    <span>
-      Current question is: {{ obj.current }}
-    </span>
-        
-        
+
+
         <button 
-            class="border rounded px-1 py-px text-xs"
-            @click="previousQuestion"
-            :class="{
-                'border-blue-500 text-blue-500': true
-            }"
-        > Previous </button>
+        v-if="current !== 0"
+        class="border rounded px-1 py-px text-xs" 
+        @click="previousQuestion" 
+
+        :class="{
+            'border-blue-500 text-blue-500': true
+        }"> Previous </button>
+        <span>
+            Current question is: {{ current }}
+        </span>
+
+
         <button 
-            class="border rounded px-1 py-px text-xs"
-            @click="nextQuestion"
-            :class="{
-                'border-blue-500 text-blue-500': true
-            }"
-        > Next </button>
+        class="border rounded px-1 py-px text-xs" @click="nextQuestion" :class="{
+            'border-blue-500 text-blue-500': true
+        }"> Next </button>
+
         <!-- <nav class="blog-nav nav nav-justified my-5">
             <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i
                     class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
@@ -74,7 +73,7 @@ let currentQuestion = computed(() => {
                     class="arrow-next fas fa-long-arrow-alt-right"></i></a>
         </nav> -->
 
-        
+
         <!-- <Multistep :questions="questions" v-model:currentQuestionIndex="currentQuestionIndex" /> -->
     </div>
 </template>

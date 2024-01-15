@@ -27,6 +27,7 @@ onMounted(() => {
     </accordion-panel>
   </Accordion> -->
   <div class="question">
+    <h1>Question №{{ current }}: </h1>
     {{ idx }}
     {{ question.question }}
 
