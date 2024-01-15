@@ -71,11 +71,14 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Question $question)
-    {
-        $question['answer1'] = $question['answer'];
-        $question['answer2'] = $question['answer'];
-        $question['answer3'] = $question['answer'];
-        $question['answer4'] = $question['answer'];
+    {        
+        $test_variants = [
+            "1111",
+            "2222",
+            "3333",
+            "4444"
+        ];
+        $question['variants'] = json_decode($question->variants) ?? $test_variants;
         return view('admin.questions.edit', [
             'question' => $question
         ]);
@@ -92,7 +95,7 @@ class QuestionController extends Controller
     {
         
         $question->title = $request->title;
-        $variants = json_encode($request->answers);
+        $variants = json_encode($request->variants);
         $question->variants = $variants;
         
         $correct_ids_array = ['1'];

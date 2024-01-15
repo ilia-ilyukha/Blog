@@ -14,7 +14,7 @@ class UpdateQuestionsTable extends Migration
     public function up()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->string('variants')->nullable();
+            $table->longText('variants')->nullable();
             $table->string('correct_ids')->nullable();
         });
         
@@ -27,9 +27,9 @@ class UpdateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->questions('variants');
-            $table->questions('correct_ids');
+        Schema::table('questions', function (Blueprint $table) {
+            $table->dropColumn('variants');
+            $table->dropColumn('correct_ids');
         });
     }
 }

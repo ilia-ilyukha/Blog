@@ -27,13 +27,16 @@
                                 <label for="title">Title</label>
                                 <input type="text" id="title" name="title" class="form-control" value="{{ $question['question'] }}">
                             </div>
+                            <div class="form-group">
+                                <span>{{ $question['answer'] }}</span>
+                            </div>
 
                             <div class="form-group">
                                 <label for="answers">Variants:</label>
-                                <input type="text" id="answer1" name="answers[1]" class="form-control" value="{{ $question['answer1'] }}">
-                                <input type="text" id="answer2" name="answers[2]" class="form-control" value="{{ $question['answer2'] }}">
-                                <input type="text" id="answer3" name="answers[3]" class="form-control" value="{{ $question['answer3'] }}">
-                                <input type="text" id="answer4" name="answers[4]" class="form-control" value="{{ $question['answer4'] }}">
+                                <input type="text" id="answer1" name="variants[0]" class="form-control" value="{{ $question['variants'][0] }}">
+                                <input type="text" id="answer2" name="variants[1]" class="form-control" value="{{ $question['variants'][1] }}">
+                                <input type="text" id="answer3" name="variants[2]" class="form-control" value="{{ $question['variants'][2] }}">
+                                <input type="text" id="answer4" name="variants[3]" class="form-control" value="{{ $question['variants'][3] }}">
                             </div>
                             
                             <a href="{{ route('questions.index') }}" class="btn btn-secondary">Cancel</a>

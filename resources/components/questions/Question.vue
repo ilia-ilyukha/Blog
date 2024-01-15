@@ -1,15 +1,15 @@
 <script setup>
 import { Accordion, AccordionPanel, AccordionHeader, AccordionContent } from 'flowbite-vue'
 
-import { ref, reactive, computed, onMounted  } from 'vue';
+import { ref, reactive, computed, onMounted, onUpdated } from 'vue';
 const props = defineProps({
   question: Object,
   current: Number,
   idx: Number
 });
 
-onMounted(() => {
-  // console.log(props.question);
+onUpdated(() => {
+  console.log(props.question);
 })
 
 </script>
@@ -31,6 +31,13 @@ onMounted(() => {
     {{ idx }}
     {{ question.question }}
 
+    <div class="variants" v-if="question.variants">
+      <div class="variant" v-for="variant in question.variants">
+        <label for="">{{ variant }}</label>
+        <input v-if="question.variants" type="radio" value="1" />
+      </div>
+    </div>
+
 
   </div>
 </template>
@@ -38,10 +45,10 @@ onMounted(() => {
 
 <style>
 .question {
-    /* background-color: red; */
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
+  /* background-color: red; */
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
 }
 </style>

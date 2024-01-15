@@ -21,6 +21,7 @@ class QuestionResource extends JsonResource
             'question' => $this->question,
             'answer' => $this->answer,
             'tag' => $this->tag,
+            'variants' => json_decode($this->variants),
         ];
 
         // id    
