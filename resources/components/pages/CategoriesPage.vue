@@ -3,7 +3,7 @@
     <HomePageSection />
   </section>
   <section class="blog-list px-3 py-5 p-md-5">
-    <div class="">
+    <div class="container">
       <Categories />
     </div>
   </section>
