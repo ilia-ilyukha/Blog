@@ -32,6 +32,11 @@
                     </div>
                 </div>
                 <div class="card-body p-0">
+                    <div class="flex">
+                        <a href="{{ route('questions.create') }}">
+                            <button type="button" class="btn btn-block btn-outline-primary">Create</button>
+                        </a>
+                    </div>
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
