@@ -50,7 +50,7 @@ class QuestionController extends Controller
 
         $question->save();
 
-        return redirect()->route('questions.index');
+        return redirect()->route('questions.edit', $question->id);
     }
 
     /**
