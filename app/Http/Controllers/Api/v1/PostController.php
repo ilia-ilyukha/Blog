@@ -30,7 +30,7 @@ class PostController extends Controller
         // $posts->paginate();
 
         if(count($filterItems) == 0){
-            return new PostCollection(Post::paginate(10));
+            return new PostCollection(Post::paginate(20));
         }else{
             $posts = Post::where($filterItems)->paginate();
             return new PostCollection($posts->appends($request->query()));
